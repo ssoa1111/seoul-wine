@@ -1,0 +1,636 @@
+@charset "UTF-8";
+
+/* ----------------mobile---------------- */
+body {
+    background: wheat;
+}
+.pc{
+    display: none;
+}
+#wrap{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    max-width: 768px;
+}
+/* ----------------top css---------------- */
+header {
+    width: 100%;
+    height: 80px;
+    position: relative;
+    background: #333;
+    z-index: 10;
+}
+h1 {
+    width: 150px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+h1 img {
+    box-sizing: border-box;
+    padding: 10%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/* ------/top icon css/------ */
+header ul.icon {
+    position: absolute;
+    bottom: 10%;
+    right: 10px;
+    display: flex;
+}
+header ul.icon li {
+    width: 30px;
+}
+header ul.icon li .material-icons {
+    width: 100%;
+    color: #fff;
+}
+
+/* ------/hamberger menu/------ */
+/* ------/hamberger btn/------ */
+.button_container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    left: 4%;
+    height: 27px;
+    width: 35px;
+    cursor: pointer;
+    z-index: 100;
+    transition: opacity .25s ease;
+}
+.button_container:hover {
+    opacity: .7;
+}
+/* ------/script active btn/------ */
+.button_container.active .btn_top {
+    transform: translateY(11px) translateX(0) rotate(45deg);
+    background: #CF4646;
+}
+.button_container.active .btn_middle {
+    opacity: 0;
+    background: #CF4646;
+}
+.button_container.active .btn_bottom {
+    transform: translateY(-11px) translateX(0) rotate(-45deg);
+    background: #CF4646;
+}
+.button_container span {
+    background: #CF4646;
+    border: none;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .35s ease;
+    cursor: pointer;
+}
+.button_container span:nth-of-type(2) {
+    top: 11px;
+}
+.button_container span:nth-of-type(3) {
+    top: 22px;
+}
+
+/* ------/hamberger nav menu/------ */
+.menu__overlay {
+    width: 100%;
+    height: 0%;
+    position: fixed;
+    z-index: 2;
+    background-color: #333;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+}
+.menu__overlay .mainmenu > li, .menu__overlay .submenu > li{
+    text-align: left;
+    opacity: 0;
+    color: #fff;
+}
+.menu__overlay .mainmenu{
+    margin-top: 25%;
+    display: flex;
+    justify-content: center;
+}
+.menu__overlay .mainmenu > li{
+    font-family: 'SANGJUGyeongcheonIsland';
+    font-size: 1.25em; /*24px*/
+    padding-bottom: 30px;
+    width: 25%;
+    text-align: center;
+}
+.menu__overlay .mainmenu > li:hover{
+    color: #CF4646;
+}
+.menu__overlay .mainmenu div > ul{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.menu__overlay .mainmenu div ul > li{
+    padding: 5px 0;
+    display: none;
+    color: #fff;
+    font-size: 0.75em;
+    font-family: 'OTWelcomeRA';
+}
+.menu__overlay .mainmenu > li:hover > div ul > li{
+    animation: fadeIn 1s;
+    display: block;
+}
+.menu__overlay .submenu{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: absolute;
+    bottom: 10%;
+}
+.menu__overlay .submenu li{
+    margin-top: 30px;
+    padding: 0 10px;
+}
+.menu__overlay .submenu li a:hover{
+    color: #fff;
+}
+
+/* ------/script addclass menu/------ */
+.menu__overlay.open {
+    height: 100%;
+}
+.menu__overlay.open .mainmenu > li, .menu__overlay.open .submenu > li{
+    animation: fadeInRight .9s ease forwards;
+    animation-duration: .5s;
+    cursor: pointer;
+}
+.menu__overlay.open .mainmenu > li:nth-of-type(2),.menu__overlay.open .submenu > li:nth-of-type(2) {
+    animation-duration: .6s;
+}
+.menu__overlay.open .mainmenu > li:nth-of-type(3),.menu__overlay.open .submenu > li:nth-of-type(3) {
+    animation-duration: .7s;
+}
+.menu__overlay.open .mainmenu > li:nth-of-type(4),.menu__overlay.open .submenu > li:nth-of-type(4) {
+    animation-duration: .8s;
+}
+.menu__overlay.open .submenu::before{
+    content: '';
+    display: block;
+    width: 80%;
+    height: 2px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    background: #000;
+    animation: fadeInRight .5s ease forwards;
+}
+
+
+
+/* ----------------top introduce---------------- */
+/* ------/div common/------ */
+.introduce{
+    position: relative;
+    width: 100%;
+    background: #ECECEC;
+}
+.introduce .introduce__text{
+    text-align: center;
+}
+.introduce .introduce__text h2{
+    width: 50%;
+    margin: 20px auto 10px;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 2px 2px 2px #aaa;
+    font-family: 'SANGJUGyeongcheonIsland';
+}
+.introduce .introduce__text .small-title{
+    font-size: 1.125em;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.introduce .introduce__text .text-content{
+    width: 70%;
+    margin: 30px auto 0;
+    line-height: 1.7;
+    text-align: center;
+    font-size: 0.875em;
+}
+.introduce .introduce__text .small-title .material-icons{
+    padding: 0 0 0 10px;
+    animation: movearrow 1s ease-in-out infinite;
+}
+/* @keyframe */
+@keyframes movearrow{
+    from{transform: translateX(-5px);}
+    to{transform: translateX(5px);}
+}
+/* ------/introduce__first/------ */
+.introduce .introduce__first {
+    width: 100%;
+}
+.introduce .introduce__first img:nth-child(1){
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 5%;
+}
+.introduce .introduce__first .fruit{
+    width: 80%;
+    max-width: 80%;
+    margin: 5% auto;
+}
+
+/* ------/introduce__second/------ */
+.introduce .introduce__second{
+    width: 100%;
+}
+.introduce .introduce__second img:nth-child(1){
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+.introduce .introduce__second .grape1{
+    width: 30%;
+    position: absolute;
+    top: 5%;
+    left: 0;
+}
+.introduce .introduce__second .grape2{
+    width: 20%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+}
+.introduce .introduce__second .grape3{
+    width: 20%;
+    position: absolute;
+    top: 15%;
+    right: 0;
+}
+.introduce .introduce__second .introduce__text{
+    width: 100%;
+    margin: 25% 0 25%;
+}
+/* ------/introduce__third/------ */
+.introduce .introduce__third{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.introduce .introduce__third .meriot-left, .introduce .introduce__third .meriot-right{
+    display: flex;
+    width: 40%;
+    margin: auto;
+}
+.introduce .introduce__third .meriot-left{
+    order: 1;
+    margin-top: 8%;
+}
+.introduce .introduce__third .meriot-right{
+    order: 3;
+}
+.introduce .introduce__third img{
+    width: 25%;
+}
+.introduce .introduce__third .introduce__text{
+    order: 2;
+    width: 100%;
+    margin: 6% 0 8%;
+}
+/* ------/introduce__third left animate/------ */
+.introduce .introduce__third .meriot-left img{
+    transform: translateX(-300%);
+}
+.introduce .swiper-slide-active .meriot-left img{
+    transition: all 0.5s linear;
+    transform: translateX(0%);
+}
+.introduce .swiper-slide-active .meriot-left:nth-child(1){
+    transition-delay: 0.5s;
+}
+.introduce .swiper-slide-active .meriot-left:nth-child(2){
+    transition-delay: 0.45s;
+}
+.introduce .swiper-slide-active .meriot-left:nth-child(3){
+    animation-duration: 0.4s;
+}
+.introduce .swiper-slide-active .meriot-left:nth-child(4){
+    animation-duration: 0.1s;
+}
+/* ------/introduce__third right animate/------ */
+.introduce .swiper-slide .meriot-right img{
+    transform: translateX(300%);
+}
+.introduce .swiper-slide-active .meriot-right img{
+    transition: all 0.5s linear;
+    transform: translateX(0%);
+}
+.introduce .swiper-slide-active .meriot-right:nth-child(1){
+    transition-delay: 0.5s;
+}
+.introduce .swiper-slide-active .meriot-right:nth-child(2){
+    transition-delay: 0.45s;
+}
+.introduce .swiper-slide-active .meriot-right:nth-child(3){
+    animation-duration: 0.4s;
+}
+.introduce .swiper-slide-active .meriot-right:nth-child(4){
+    animation-duration: 0.1s;
+}
+
+
+
+
+/* ----------------favorite favor---------------- */
+.favor{
+    width: 100%;
+    background: #333;
+}
+.favor h2{
+    width: 100%;
+    margin: 30% auto 15%;
+    font-size: 1.375em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+    font-family: 'SANGJUGyeongcheonIsland';
+}
+.favor ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 30%;
+}
+.favor ul li{
+    width: 50%;
+    box-sizing: border-box;
+    padding: 5%;
+    position: relative;
+    cursor: pointer;
+}
+.favor ul li .favor--text{
+    width: 70%;
+    height: 20%;
+    text-align: center;
+    position: absolute;
+    top: 10%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: 2;
+}
+.favor ul li .favor--text h3{
+    color: #fff;
+    text-transform: uppercase;
+}
+.favor ul li .favor--text p{
+    color: #fff;
+    display: none;
+    font-size: 0.75em;
+    font-weight: lighter;
+}
+.favor ul li:hover img.nomal{
+    opacity: 1;
+    transition: all 0.4s;
+    z-index: 2;
+}
+.favor ul li:hover .favor--text h3{
+    transition: all 0.4s;
+    transform: translateY(-10px);
+}
+.favor ul li:hover .favor--text p{
+    display: block;
+    animation: slideInUp .5s ease forwards;
+}
+.favor ul li img.nomal{
+    width: 80%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0;
+}
+.favor ul li img.blur{
+    width: 100%;
+    filter: blur(25px);
+}
+
+/* ----------------panel mobile---------------- */
+.panel{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.panel .swiper{
+    width: 100%;
+    height: 100%;
+}
+.panel .swiper-slide{
+    overflow: hidden;
+}
+.panel .swiper-slide.first{
+    background: url(../image/panel/first.jpg) no-repeat 65%;
+    background-size: cover;
+}
+.panel .swiper-slide.second{
+    background: url(../image/panel/forth.jpg) no-repeat;
+    background-size: cover;
+}
+.panel .swiper-slide.third{
+    background: url(../image/panel/third.jpg) no-repeat 60%;
+    background-size: cover;
+}
+.panel .swiper-slide.forth{
+    background: url(../image/panel/second.jpg) no-repeat;
+    background-size: cover;
+}
+.panel .panel--text{
+    width: 100%;
+    height: 170px;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    margin-top: calc(170px / -2);
+}
+.panel .panel--text h2{
+    font-family: 'SANGJUGyeongcheonIsland';
+    text-transform: uppercase;
+}
+.panel .panel--text > p{
+    margin: 10% 0 5%;
+}
+.panel .panel--text .more-btn{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid #CF4646;
+    color: #fff;
+}
+.panel .panel--text .more-btn p, .panel .panel--text .more-btn span{
+    transform: translateX(-12px);
+}
+.panel .panel--text .more-btn p{
+    text-transform: uppercase;
+    font-size: 0.875em;
+}
+.panel .panel--text .more-btn:hover{
+    background: #CF4646;
+}
+.panel .panel--text .more-btn:hover p,
+.panel .panel--text .more-btn:hover span{
+    transform: translateX(85%);
+    color: #000;
+    transition: transform 0.4s;
+}
+
+/* ----------------recommend---------------- */
+.recommend{
+    width: 100%;
+    height: 100vh;
+    background: url(../image/recommand/bg.jpg) no-repeat center fixed;
+    background-size: cover;
+    color: #fff;
+}
+.recommend .recommend--text{
+    text-align: center;
+    margin: 25% 0;
+}
+.recommend .recommend--text h2{
+    font-family: 'SANGJUGyeongcheonIsland';
+    text-transform: uppercase;
+}
+.recommend .recommend--box .swiper{
+    width: 35vw;
+    height: 40vh;
+    padding: 5%;
+}
+.recommend .recommend--box .swiper img{
+    width: 100%;
+    max-width: 100%;
+}
+
+.recommend .recommend--box .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .recommend .recommend--box .swiper-slide:nth-child(1n) {
+    background-color: rgb(206, 17, 17);
+  }
+
+  .recommend .recommend--box .swiper-slide:nth-child(2n) {
+    background-color: rgb(0, 140, 255);
+  }
+
+  .recommend .recommend--box .swiper-slide:nth-child(3n) {
+    background-color: rgb(10, 184, 111);
+  }
+
+  .recommend .recommend--box .swiper-slide:nth-child(4n) {
+    background-color: rgb(211, 122, 7);
+  }
+
+  .recommend .recommend--box .swiper-slide:nth-child(5n) {
+    background-color: rgb(118, 163, 12);
+  }
+
+  .recommend .recommend--box .swiper-slide:nth-child(6n) {
+    background-color: rgb(180, 10, 47);
+  }
+
+/* ----------------popular---------------- */
+.popular{
+    width: 100%;
+    height: 80vh;
+    background: #ECECEC;
+    text-align: center;
+}
+.popular .popular-wine{
+    width: 70%;
+    margin: auto;
+}
+.popular .popular-wine > div{
+    border: 2px solid #000;
+    border-radius: 50px;
+}
+.popular .popular-wine img{
+    width: 100%;
+}
+.popular h2{
+    font-family: 'SANGJUGyeongcheonIsland';
+    text-transform: uppercase;
+    margin-top: 25%;
+}
+.popular p{
+    margin: 1% 0 10%;
+}
+
+/* ----------------footer---------------- */
+footer{
+    width: 100%;
+    background: linear-gradient( #333 , #ececec);
+}
+
+
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        left: 20%;
+    }
+
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+
+
+
+@media all and (min-width: 768px) {}
+
+@media all and (min-width: 1400px) {
+    .mobile {
+        display: none;
+    }
+    .pc{
+        display: block;
+    }
+}
