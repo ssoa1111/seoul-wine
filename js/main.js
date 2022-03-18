@@ -146,15 +146,14 @@ new Swiper('.panel .swiper', {
       },
     }
   });
+   
 //판넬 배경 변경 pc
-
 function bgChange(index){
   const panelHover = document.querySelectorAll('.panel.pc > div');
   const panelBg = document.querySelector('.panel.pc');
-  if(panelHover[index]){
     panelBg.style.background = `url(../image/panel/bg_${index}.jpg) no-repeat center center`;
-  console.log(panelBg.style.background);
-  }
+    panelBg.style.backgroundSize = 'cover';
+    panelBg.style.transition = 'all 0.4s';
 };
 
 
