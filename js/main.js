@@ -70,16 +70,19 @@ cursorModifiers.forEach(curosrModifier => {
 
 
 //상단 search 버튼
+// search 아이콘
 const searchIcon = document.querySelector('.total-menu.mobile .search');
+// close 아이콘
 const closeIcon = document.querySelector('.total-menu.mobile .close');
+// 검색창
 const searchBox = document.querySelector('.total-menu.mobile .search-box')
-const textfocus = document.querySelector('input');
+// search 아이콘 클릭
 searchIcon.addEventListener('click',()=>{
     searchBox.classList.remove('hide');
     closeIcon.classList.remove('hide');
     searchIcon.classList.add('hide');
-    textfocus.focus();
 });
+// close 아이콘 클릭
 closeIcon.addEventListener('click',()=>{
   searchBox.classList.add('hide');
   closeIcon.classList.add('hide');
@@ -116,17 +119,6 @@ new Swiper('.introduce .swiper', {
     slidesPerView: 1, //한 번에 보여줄 슬라이드 개수
 });
 
-// const showEl = document.querySelectorAll('.meriot-right img');
-// const classHas = document.querySelector('.swiper-slide');
-// if(classHas.classList.contains('-active')){
-// showEl.forEach(function(showEl, index){
-//     //gsop문법 => gsap.to(요소, 지속시간초단위, 옵션)
-//     gsap.to(showEl, 1, {
-//         delay : (index + 1) * 0.7, //0.7, 1.4, 2.1, 2.8
-//         translateX : 0,
-//     })
-// });
-// }
 
 //판넬 스와이퍼 mobile
 new Swiper('.panel .swiper', {
@@ -147,6 +139,7 @@ new Swiper('.panel .swiper', {
     }
   });
    
+
 //판넬 배경 변경 pc
 function bgChange(index){
   const panelHover = document.querySelectorAll('.panel.pc > div');
@@ -155,15 +148,6 @@ function bgChange(index){
     panelBg.style.backgroundSize = 'cover';
     panelBg.style.transition = 'all 0.4s';
 };
-
-
-//recommend
-// const wineHover = document.querySelector('.recommend-wine img');
-// wineHover.addEventListener('hover',()=>{
-//   if(wineHover[1].classList.contains('hide')){
-//     wineHover.classList.remove('hide');
-//   }
-// })
 
 
 //popular 스와이퍼
@@ -192,11 +176,6 @@ new Swiper('.popular .swiper', {
 });
 
 
-
-
-
-
-
 //top btn
 window.addEventListener('scroll',
     _.throttle(function(){
@@ -207,7 +186,6 @@ window.addEventListener('scroll',
             //     opacity : 0,
             //     display : 'none'
             // });
-            // 상단으로 스크롤 버튼 보이기!
             gsap.to(toTopEl, 0.5, {
               opacity : 1,
       });
@@ -217,7 +195,6 @@ window.addEventListener('scroll',
             //     opacity : 1,
             //     display : 'block'
             // });
-            // 상단으로 스크롤 버튼 숨기기!
             gsap.to(toTopEl, 0.5, {
                 opacity : 0,
       });
