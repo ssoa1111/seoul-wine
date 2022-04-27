@@ -151,7 +151,7 @@ new Swiper('.panel .swiper', {
 function bgChange(index){
   const panelHover = document.querySelectorAll('.panel.pc > div');
   const panelBg = document.querySelector('.panel.pc');
-    panelBg.style.background = `url(../image/panel/bg_${index}.jpg) no-repeat center center`;
+    panelBg.style.background = `url(image/panel/bg_${index}.jpg) no-repeat center center`;
     panelBg.style.backgroundSize = 'cover';
     panelBg.style.transition = 'all 0.4s';
 };

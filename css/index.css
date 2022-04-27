@@ -27,6 +27,7 @@
     }
 }
 
+/* 모든 구글 아이콘에 pointer 부여 */
 .material-icons{
     cursor: pointer;
 }
@@ -480,6 +481,7 @@ header .total-menu.mobile .search-box input{
     position: relative;
     cursor: pointer;
 }
+/* favor text */
 .favor ul li .favor--text{
     width: 70%;
     height: 20%;
@@ -502,11 +504,13 @@ header .total-menu.mobile .search-box input{
     font-size: 0.75em;
     font-weight: lighter;
 }
+/* hover하면 위의 이미지가 opacity : 1 */
 .favor ul li:hover img.nomal{
     opacity: 1;
     transition: all 0.4s;
     z-index: 2;
 }
+/* hover하면 text 나타남 */
 .favor ul li:hover .favor--text h3{
     transition: all 0.4s;
     transform: translateY(-10px);
@@ -525,6 +529,7 @@ header .total-menu.mobile .search-box input{
     margin: auto;
     opacity: 0;
 }
+/* 겹쳐진 이미지 중 맨 아래 blur처리 */
 .favor ul li img.blur{
     width: 100%;
     filter: blur(25px);
@@ -565,6 +570,7 @@ header .total-menu.mobile .search-box input{
     background: url(../image/panel/bg_4.jpg) no-repeat rgba(0, 0, 0, 0.7);
     background-size: cover;
 }
+/* panel text */
 .panel .panel--text{
     width: 100%;
     height: 170px;
@@ -581,6 +587,7 @@ header .total-menu.mobile .search-box input{
 .panel .panel--text > p{
     margin: 50px 0 25px;
 }
+/* panel more button */
 .panel .panel--text .more-btn{
     width: 50px;
     height: 50px;
@@ -647,6 +654,7 @@ header .total-menu.mobile .search-box input{
     box-sizing: border-box;
     padding: 20% 0 15%;
 }
+/* recommend text */
 .recommend .recommend--text{
     text-align: center;
     margin: 40px 0 80px;
@@ -660,6 +668,7 @@ header .total-menu.mobile .search-box input{
     font-weight: normal;
     font-size: 1em;
 }
+/* recommend product */
 .recommend .recommend--box{
     width: 80%;
     max-width: 600px;
@@ -689,6 +698,7 @@ header .total-menu.mobile .search-box input{
 .recommend .recommend--box .recommend-wine img:nth-child(2), .recommend .recommend--box .recommend-wine .recommend--textbox{
     display: none;
 }
+/* recommend product text */
 .recommend .recommend--box .recommend-wine .recommend--textbox{
     box-sizing: border-box;
     position: absolute;
@@ -766,6 +776,7 @@ header .total-menu.mobile .search-box input{
 .popular .swiper{
     width: 90%;
 }
+/* medal */
 .popular .popular-wine .medal{
     width: 200px;
     height: 350px;
@@ -777,6 +788,7 @@ header .total-menu.mobile .search-box input{
     width: 100%;
     max-width: 100%;
 }
+/* medal 앞 뒤 공통 */
 .popular .popular-wine .medal .front, .popular .popular-wine .medal .back{
     width: 200px;
     height: 350px;
@@ -812,26 +824,12 @@ header .total-menu.mobile .search-box input{
     font-weight: 600;
     text-align: left;
 }
+/* medal 앞면 배경 애니메이션 */
 .popular .popular-wine .medal .front{
     background: linear-gradient(-45deg, #8d99ae, #2b2d42, #edf2f4, #98c1d9);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
     transform: rotateY(0deg);
-}
-.popular .popular-wine .medal:hover .front{
-    transform: rotateY(-180deg);
-}
-.popular .popular-wine .medal .back{
-    /* background: #cedce7; */
-    background: #ececec;
-    transform: rotateY(-180deg);
-
-}
-.popular .popular-wine .medal:hover .back{
-    transform: rotateY(0deg);
-}
-.popular .popular-wine .medal:hover .back .back--text h3{
-    animation: slideInDown 0.5s ease-in-out;
 }
 @keyframes gradient {
 	0% {
@@ -844,6 +842,20 @@ header .total-menu.mobile .search-box input{
 		background-position: 0% 50%;
 	}
 }
+.popular .popular-wine .medal:hover .front{
+    transform: rotateY(-180deg);
+}
+.popular .popular-wine .medal .back{
+    background: #ececec;
+    transform: rotateY(-180deg);
+}
+.popular .popular-wine .medal:hover .back{
+    transform: rotateY(0deg);
+}
+.popular .popular-wine .medal:hover .back .back--text h3{
+    animation: slideInDown 0.5s ease-in-out;
+}
+
 .popular .swiper-prev,
 .popular .swiper-next{
     width: 42px;
@@ -986,18 +998,18 @@ footer p{
         width: 100%;
     }
     
-/* ------/introduce__second/------ */
-.introduce .introduce__second {
-    position: relative;
-}
-.introduce .introduce__second img:nth-child(1){
-    width: 1500px;
-    margin: auto;
-    max-width: 100%;
-    position: fixed;
-    top: -150px;
-    left: -5%;
-}
+    /* ------/introduce__second/------ */
+    .introduce .introduce__second {
+        position: relative;
+    }
+    .introduce .introduce__second img:nth-child(1){
+        width: 1500px;
+        margin: auto;
+        max-width: 100%;
+        position: fixed;
+        top: -150px;
+        left: -5%;
+    }
     .introduce .introduce__second .grape1{
         width: 20%;
         position: absolute;
@@ -1068,16 +1080,20 @@ footer p{
 }
 
 @media all and (min-width: 1400px) {
+    /* mobile, tab에서만 보이는 것 숨기기 */
     .mobile {
         display: none;
     }
+    /* pc형 나타내기 */
     .pc{
         display: block;
     }
+    /* pc형일 때 내부 컨텐츠 크기 제어 */
     .inner{
         max-width: 1400px;
         margin: auto;
     }
+    /* mobile, tab에서의 search-box제거 */
     .search-box{
         display: none;
     }
@@ -1094,6 +1110,7 @@ footer p{
         top: 10px;
         bottom: auto;
     }
+    /* menu */
     .total-menu.pc .menu__overlay .mainmenu{
         display: flex;
         position: absolute;
@@ -1140,6 +1157,7 @@ footer p{
         display: flex;
         font-family: 'OTWelcomeRA';
     }
+    /* menu new product */
     .total-menu.pc .menu__overlay .mainmenu .menu-box .inner .new-item{
         width: 28.5%;
         height: 250px;
@@ -1208,6 +1226,7 @@ footer p{
         font-size: 0.75em;
         color: #888;
     }
+    /* submenu */
     .total-menu.pc .menu__overlay .submenu{
         position: absolute;
         top: 15px;
@@ -1372,6 +1391,7 @@ footer p{
         margin: auto;
         margin-bottom: 200px;
     }
+    /* ----------------panel---------------- */
     .panel.pc{
         display: flex;
         width: 100%;
@@ -1398,6 +1418,7 @@ footer p{
         opacity: 1;
         transition: all 0.5s;
     }
+    /* ----------------recommend---------------- */
     .recommend{
         padding: 13% 0;
     }
@@ -1422,6 +1443,7 @@ footer p{
         margin: 30px 0;
         line-height: 1.5;
     }
+    /* ----------------popular---------------- */
     .popular h2{
         font-size: 2.5em;
     }
